@@ -8,7 +8,8 @@ Since later revisions (probably because of video decoder IC change) it stopped r
 noisy video properly and is now partially, well, unfit for purspose of recording "drone" 
 (or, infact any other R/C model) video, since being analog, it's almost never noiseless.
 It does record that video, but as the signal starts being weakened and polluted with noise, the
-video turns into a black screen epillepsy-fest. That's basically why I'm doing all of this :P
+video turns into a black screen epillepsy-fest (for example, [here](https://www.youtube.com/watch?v=Qu6oORGNFpE)).
+That's basically why I decided to take a look into all of this :P
 
 One could attach the box to the model itself and get great video, but one could also attach
 a proper action camera to get much better recording quality. This HMDVR box thingy, while attached
@@ -55,7 +56,7 @@ registers to the chip using the aforementioned Arduino sketch;
     * https://github.com/OpenNuvoton/NuMaker_NuWicam_RDK/blob/master/sources/kernel/drivers/media/video/w55fa93_hw/GM7150/GM7150.dat
     * https://github.com/OpenNuvoton/NuMaker_NuWicam_RDK/blob/master/sources/kernel/drivers/media/video/w55fa93_hw/GM7150/sensor_gm7150.h
    
-# What there is to be done
+# What there is to do
 Quite frankly, I don't have a clue. Blindly poking around isn't fun, so I'll leave it all at that.
 My own conclusion as of now: GM7150 video decoder can't be set up to digitize noisy video properly,
 while TVP5150 has this working right out of the box. Probably TV/VCR switch/detector is at fault? 
