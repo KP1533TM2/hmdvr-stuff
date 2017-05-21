@@ -1,0 +1,13 @@
+Subaddress 89h
+Status register 2
+
+bit 7: reserved
+bit 6: weak signal detection
+bit 5: PAL switching polarity
+bit 4: Field sequence state
+bit 3: AGC and 1 shift state
+bits 2-0: reserved (macrovision detection originally)
+
+Subaddress 8Ah
+Status register 3
+[7:0] AGC gain

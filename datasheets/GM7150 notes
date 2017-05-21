@@ -1,0 +1,29 @@
+Pin 28, WTF?!
+=============
+
+I found this pin to be pulled low through a near-zero ohm resistor.
+It's active low on the TI chip, so WTF? It means the chip is in power-down.
+
+Datasheet says this:
+功耗模式控制， 端口内部带pull-up 电阻
+0: 低功耗
+1: 正常模式
+
+Which google translates to this:
+Power mode control, the port with pull-up resistance inside
+0: Low power consumption
+1: Normal mode
+
+...which means it's in low-power mode at all times.
+
+PDN = 0,
+
+
+Sync signals
+=============
+
+so the horizontal sync, pin 25 is outputting 50Hz vsync
+and the vsync pin 24 is ouputting the same goddamn thing
+pin 26 shows actual 15.625K hsync pulses (positive)
+
+ALL of those are still active when there's noise on the input!

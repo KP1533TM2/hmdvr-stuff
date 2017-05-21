@@ -1,0 +1,141 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:tvp5150am1
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L TVP5150AM1 U?
+U 1 1 5920634B
+P 4750 3550
+F 0 "U?" H 4750 3500 60  0000 C CNN
+F 1 "TVP5150AM1" H 4750 3600 60  0000 C CNN
+F 2 "" H 4750 3550 60  0001 C CNN
+F 3 "" H 4750 3550 60  0001 C CNN
+	1    4750 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X04 J?
+U 1 1 592063FE
+P 8000 3150
+F 0 "J?" H 8000 3400 50  0000 C CNN
+F 1 "CONN_01X04" V 8100 3150 50  0000 C CNN
+F 2 "" H 8000 3150 50  0001 C CNN
+F 3 "" H 8000 3150 50  0001 C CNN
+	1    8000 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X06 J?
+U 1 1 59206463
+P 2000 2750
+F 0 "J?" H 2000 3100 50  0000 C CNN
+F 1 "CONN_01X06" V 2100 2750 50  0000 C CNN
+F 2 "" H 2000 2750 50  0001 C CNN
+F 3 "" H 2000 2750 50  0001 C CNN
+	1    2000 2750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Crystal_GND24 Y?
+U 1 1 5920662A
+P 2950 3600
+F 0 "Y?" H 3075 3800 50  0000 L CNN
+F 1 "Crystal_GND24" H 3075 3725 50  0000 L CNN
+F 2 "" H 2950 3600 50  0001 C CNN
+F 3 "" H 2950 3600 50  0001 C CNN
+	1    2950 3600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2950 3450 2950 3400
+Wire Wire Line
+	2950 3400 3750 3400
+Wire Wire Line
+	3750 3500 3250 3500
+Wire Wire Line
+	3250 3500 3250 3800
+Wire Wire Line
+	3250 3800 2950 3800
+Wire Wire Line
+	2950 3800 2950 3750
+$Comp
+L GND #PWR?
+U 1 1 5920671F
+P 2700 3850
+F 0 "#PWR?" H 2700 3600 50  0001 C CNN
+F 1 "GND" H 2700 3700 50  0000 C CNN
+F 2 "" H 2700 3850 50  0001 C CNN
+F 3 "" H 2700 3850 50  0001 C CNN
+	1    2700 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5920673B
+P 3200 3850
+F 0 "#PWR?" H 3200 3600 50  0001 C CNN
+F 1 "GND" H 3200 3700 50  0000 C CNN
+F 2 "" H 3200 3850 50  0001 C CNN
+F 3 "" H 3200 3850 50  0001 C CNN
+	1    3200 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 3850 3200 3600
+Wire Wire Line
+	3200 3600 3150 3600
+Wire Wire Line
+	2750 3600 2700 3600
+Wire Wire Line
+	2700 3600 2700 3850
+Wire Wire Line
+	3750 3900 3700 3900
+Wire Wire Line
+	3700 3900 3700 4300
+Wire Wire Line
+	3700 4100 3750 4100
+Wire Wire Line
+	3700 4300 3750 4300
+Connection ~ 3700 4100
+$EndSCHEMATC

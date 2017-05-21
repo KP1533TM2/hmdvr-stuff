@@ -1,0 +1,31 @@
+Addr    Data    Desc
+0x7F    0x00    Patch code execute
+0x03    0x0F    Misc controls                       - YOUT[7:0] active, SYNCs are active, SCLK on, VBLK on
+0x04    0x00    Autoswitch mask                     - autoswitch ALL color systems
+0x15    0x10    Genlock and RTC                     - F/V 01 - ITU-R BT.656 (std), toggles/field boundary (non-std)
+0x0D    0x47    Outputs and data rates              - 8b ITU-R BT.656 /w sync, ext. coding range
+0x16    0x8C    HSYNC start                         - 00010110
+0x11    0x02    Active video cropping start pixel   \
+0x12    0x00    ... 0x0200                          / = AVID inactive in VBLK, start pixel 8
+0x13    0x02    Active video cropping stop pixel    \
+0x14    0x00    ... 0x0200                          / = stop pixel 8
+0x17    0x00    Reserved (!!!)                      - ???
+0x18    0x3F    Vertical blanking start             - 63 lines after start of VBI
+
+
+Addr    7150            5150
+0x7f    Reserved        Patch code execute
+0x03    Misc controls   Misc controls
+0x04    
+
+Differences so far:
+* reg 0x03?
+* reg 0x04 - no SECAM on GM7150
+* reg 0x15 - F/V bit control is absent on GM7150
+* reg 0x0d seems alright
+* reg 0x16 seems alright
+* regs 0x11-12 look fine
+* regs 0x13-14 are initialized to 0x000 but then regs 18-19 are described WTF? (page 20)
+* reg 0x17 is reserved on both 7150 and 5150
+* reg 0x18 vblk start looks fine
+* reg 0x7f - reserved on GM7150, patch execute on TVP5150
