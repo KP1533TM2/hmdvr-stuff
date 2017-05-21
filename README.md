@@ -34,26 +34,26 @@ limiting buffer sizes. Just attach its TWI/I2C bus in parallel to the HMDVR one 
 * Python script that implements video decoder IC class that allows to probe, read and write
 registers to the chip using the aforementioned Arduino sketch;
 * Some poking around and experimening with registers and other stuff here and there has already shown:
- * There's probably a mistake on the PCB, which, surprisingly however, doesn't affect GM7150's 
+  * There's probably a mistake on the PCB, which, surprisingly however, doesn't affect GM7150's 
  operation (I thought it would, though). /PDN signal of GM7150 is attached through 0-ohm SMD
  'resistor' to ground, which, would that be a TVP5150, would send the chip into permanent low-power
  (non-operational?) mode;
- * GM7150 consciously detects weak signal (status reg 0x89, bit 6), but always blanks it;
- * Page 20 of GM7150 datasheet probably has a typo - regs 0x18, 0x19 are described instead
+  * GM7150 consciously detects weak signal (status reg 0x89, bit 6), but always blanks it;
+  * Page 20 of GM7150 datasheet probably has a typo - regs 0x18, 0x19 are described instead
  0x13, 0x14. Not sure what to think of that;
- * Ref 0x7f is "Patch execute" on TVP5150, but 'reserved' on GM7150. This is the first register main
+  * Ref 0x7f is "Patch execute" on TVP5150, but 'reserved' on GM7150. This is the first register main
  processor writes to on power-up, and I have no clue what to make of it;
- * What the heck are patches, where do I find one, and how I can push one in the video decoder?
+  * What the heck are patches, where do I find one, and how I can push one in the video decoder?
  There's no TI patch loading app note in sight, and I suspect GM7150 doesn't have that feature at
  all;
- * GM7150 doesn't have SECAM colour system features, no big loss for FPV, I guess;
- * F/V bit controls in reg 0x15 of TVP5150 are 'reserved' on GM7150;
- * On startup, main processor, along a few others, makes a write to reg 0x17, which is reserved and
+  * GM7150 doesn't have SECAM colour system features, no big loss for FPV, I guess;
+  * F/V bit controls in reg 0x15 of TVP5150 are 'reserved' on GM7150;
+  * On startup, main processor, along a few others, makes a write to reg 0x17, which is reserved and
  undocumented on both chips;
- * GM7150 datasheet's datecode is 2014.4. Seems a bit old, but couldn't find any newer ones.
- * Just found those things somehow, those might give a clue about GM7150 initialization:
-  * https://github.com/OpenNuvoton/NuMaker_NuWicam_RDK/blob/master/sources/kernel/drivers/media/video/w55fa93_hw/GM7150/GM7150.dat
-  * https://github.com/OpenNuvoton/NuMaker_NuWicam_RDK/blob/master/sources/kernel/drivers/media/video/w55fa93_hw/GM7150/sensor_gm7150.h
+  * GM7150 datasheet's datecode is 2014.4. Seems a bit old, but couldn't find any newer ones.
+  * Just found those things somehow, those might give a clue about GM7150 initialization:
+    * https://github.com/OpenNuvoton/NuMaker_NuWicam_RDK/blob/master/sources/kernel/drivers/media/video/w55fa93_hw/GM7150/GM7150.dat
+    * https://github.com/OpenNuvoton/NuMaker_NuWicam_RDK/blob/master/sources/kernel/drivers/media/video/w55fa93_hw/GM7150/sensor_gm7150.h
    
 # What there is to be done
 Quite frankly, I don't have a clue. Blindly poking around isn't fun, so I'll leave it all at that.
